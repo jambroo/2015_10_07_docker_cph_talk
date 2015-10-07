@@ -50,8 +50,8 @@
 				<section>
 					<ul>
 						<li>Previous Working Environments</li>
-						<li>Current Workflow with Docker</li>
 						<li>Available Services</li>
+						<li>Current Workflow with Docker</li>
 					</ul>
 				</section>
 
@@ -97,49 +97,8 @@
 				</section>
 
 
-
 				<section>
 					<img src="docker.png" />
-				</section>
-
-				<section>
-					<h2>Current Workflow</h2>
-					<p>Work on small task and create PR for other dev</p>
-				</section>
-
-				<section>
-					<h2>CircleCI - Pros</h2>
-					<ul>
-						<li>Bootstrapped startup price was right</li>
-						<li>Secrets not in code and entered on CircleCI site</li>
-						<li>CircleCI allows you to SSH into the build machine, which is cool</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>CircleCI - Cons</h2>
-					<ul>
-						<li>Free tier has one worker</li>
-						<li>NodeJS app - had to configure it to cache node_modules manually</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Spawned Environment</h2>
-					<ul>
-						<li>Once per PR if successful spins up complete environment on external server</li>
-						<li>Presents user with URL and SSH details</li>
-						<li>Released to public soon</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>CircleCI Configuration</h2>
-					<ul>
-						<li>Machine &gt; Services &gt; docker</li>
-						<li>Dependencies - Docker Compose, Docker pulls, Configuration file, Docker save, Docker Compose build, Ran npm install in several folders</li>
-						<li>Dependencies - Ignore cache_directories (node_modules)</li>
-					</ul>
 				</section>
 
 				<section>
@@ -199,6 +158,51 @@
 						<li>Has hosted and self-hosted options</li>
 					</ul>
 				</section>
+
+				<section>
+					<h2>Current Workflow</h2>
+					<p>Work on small task and create PR for other dev</p>
+				</section>
+
+				<section>
+					<h2>CircleCI - Pros</h2>
+					<ul>
+						<li>Bootstrapped startup price was right</li>
+						<li>Secrets not in code and entered on CircleCI site</li>
+						<li>CircleCI allows you to SSH into the build machine, which is cool</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>CircleCI - Cons</h2>
+					<ul>
+						<li>Free tier has one worker</li>
+						<li>Heavy on the configuraton side, e.g. node_modules</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Spawned Environment</h2>
+					<ul>
+						<li>Once per PR if successful spins up complete environment on external server</li>
+						<li>Presents user with URL and SSH details</li>
+						<li>Released to public soon</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>CircleCI Configuration</h2>
+					<ul>
+						<li>Machine &gt; Services &gt; docker</li>
+						<li>Dependencies - Docker Compose, Docker pulls, Configuration file, Docker save, Docker Compose build, Ran npm install in several folders</li>
+						<li>Dependencies - Ignore cache_directories (node_modules)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>CircleCI great once setup</h2>
+				</section>
+
 
 				<section>
 					Questions?
