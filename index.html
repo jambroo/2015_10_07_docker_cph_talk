@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>Blackbeard - Development Workflow</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -48,9 +48,11 @@
 				</section>
 
 				<section>
-					<h2>Previous Working Environments (brief!)</h2>
-					<h2>Current Workflow with Docker</h2>
-					<h2>Available Services</h2>
+					<ul>
+						<li>Previous Working Environments</li>
+						<li>Current Workflow with Docker</li>
+						<li>Available Services</li>
+					</ul>
 				</section>
 
 				<section>
@@ -76,18 +78,25 @@
 					</ul>
 				</section>
 
-
 				<section>
 					<h2>2014 - Denmark</h2>
 					<ul>
 						<li>Agile work environment</li>
-						<li>Worked on small changes</li>
+						<li>Worked on small incremental changes</li>
 						<li>Released often to staging server</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2></h2>
+					<ul>
 						<li>All worked off master</li>
 						<li>Vagrant used</li>
 						<li>Jenkins server - post-receive hook</li>
 					</ul>
 				</section>
+
+
 
 				<section>
 					<img src="docker.png" />
@@ -99,58 +108,102 @@
 				</section>
 
 				<section>
-					CircleCI
-		Bootstrapped startup price was right
-		Caveats
-			git amend – manually need to stop current test
-		CircleCI allows you to SSH into the build machine, which is cool
-		Free but all could be fixed you do not get parallel processing
-			We could speed things up by having this but at this stage not really required
-		Config e.g.
-			machine:
-  				services:
-- docker
-			This allows us to use Docker in our build scripts.
-		Machine here in config is used to adjust VM
-		Dependencies defined language-specifics deps
-			We have manually overriden this section to include
-				installation of docker-compose
-				run docker pulls
-				configuration file placement
-				docker save for different parts of the sys (mongo, node and docker registy)
-				docker-compose for building parts of system
-				running npm install in several folders
-			Under dependencies you can specify cache_directories, which will be persisted between builds. This speeds up the process a lot, we put node_modules in here
-		Test
-			To test our environment we run npm test within the different parts of the system.
-			This will independtanlty test each part
-		Experimental
-			This experimental section is used to only notify on the master branch
-	
-	Alternatives to CircleCI
-		Jenkins/Hudson (not hosted)
-			Slightly monolithic
-		Codeship
-			Does not seem to support Docker out of the box
-		semaphoreci
-			Free accounts limited to 100 builds per month
-			Docker support in beta		
-		Shippable
-			Supports encrypted environment variables
-			To get Docker support you seem to have to go on a paid plan
-			If you do not pay for it says in their docs you have access to docker but not docker commands, which to me says you don't have access to docker
-		travis-ci
-			Support for Docker
-			Costs 129$/month
-		TeamCity – JetBrains
-			As a plugin you can get support for Docker and Vagrant
-		Atlassian – Bamboo
-			Build and run docker containers as well as push them to a registry using Bamboo
-			Expensive solution so it is good they support docker but was out of our price 
-
-Any questions about this? Or does anyone want to share with us their current workflow if it is dramatically different to ours or very similar?
+					<h2>CircleCI - Pros</h2>
+					<ul>
+						<li>Bootstrapped startup price was right</li>
+						<li>Secrets not in code and entered on CircleCI site</li>
+						<li>CircleCI allows you to SSH into the build machine, which is cool</li>
+					</ul>
 				</section>
-			</div>
+
+				<section>
+					<h2>CircleCI - Cons</h2>
+					<ul>
+						<li>Free tier has one worker</li>
+						<li>NodeJS app - had to configure it to cache node_modules manually</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Spawned Environment</h2>
+					<ul>
+						<li>Once per PR if successful spins up complete environment on external server</li>
+						<li>Presents user with URL and SSH details</li>
+						<li>Released to public soon</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>CircleCI Configuration</h2>
+					<ul>
+						<li>Machine &gt; Services &gt; docker</li>
+						<li>Dependencies - Docker Compose, Docker pulls, Configuration file, Docker save, Docker Compose build, Ran npm install in several folders</li>
+						<li>Dependencies - Ignore cache_directories (node_modules)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Alternatives - Jenkins/Hudson</h2>
+					<ul>
+						<li>Not hosted</li>
+						<li>Powerful</li>
+						<li>Monolithic</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Alternatives - Codeship</h2>
+					<ul>
+						<li>Does not seem to support Docker out of the box</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Alternatives - SemaphoreCI</h2>
+					<ul>
+						<li>Free accounts limited to 100 builds per month</li>
+						<li>Docker support in beta</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Alternatives - Shippable</h2>
+					<ul>
+						<li>Supports encrypted environment variables</li>
+						<li>Docker support only on paid plan?</li>
+						<li>If you do not pay for it says in their docs you have access to docker but not docker commands?</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Alternatives - TravisCI</h2>
+					<ul>
+						<li>Support for Docker</li>
+						<li>Costly - $129/month</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Alternatives - TeamCity (JetBrains)</h2>
+					<ul>
+						<li>As a plugin you can get support for Docker and Vagrant</li>
+						<li>Not hosted</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Alternatives - Bamboo (Atlassian)</h2>
+					<ul>
+						<li>Docker support</li>
+						<li>$10/month entry level hosted</li>
+						<li>Has hosted and self-hosted options</li>
+					</ul>
+				</section>
+
+				<section>
+					Questions?
+				</section>
+			</section>
 
 		</div>
 
