@@ -1,243 +1,168 @@
-<!doctype html>
-<html lang="en">
+<section>
+	<h1>Development Workflow</h1>
+	<p>
+		<small>James Brooking / <a href="http://twitter.com/jambroo">@jambroo</a></small>
+	</p>
+</section>
 
-	<head>
-		<meta charset="utf-8">
+<section>
+	<ul>
+		<li>Previous Working Environments</li>
+		<li>Available Services</li>
+		<li>Current Workflow with Docker</li>
+	</ul>
+</section>
 
-		<title>Blackbeard - Development Workflow</title>
+<section>
+	<section>
+		<h2>My Past</h2>
+		<p><img src="svn.png" /></p>
+		<p>Server in place.. not used</p>
+	</section>
+</section>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+<section>
+	<section>
+		<p><img src="ftp-scumbag.jpg" /></p>
+	</section>
+</section>
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<section>
+	<h2>2012 - Team work using git</h2>
+	<ul>
+		<li>Giant PR</li>
+		<li>Conflict hell</li>
+		<li>Single sysadmin</li>
+	</ul>
+</section>
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+<section>
+	<h2>2014 - Denmark</h2>
+	<ul>
+		<li>Agile work environment</li>
+		<li>Worked on small incremental changes</li>
+		<li>Released often to staging server</li>
+	</ul>
+</section>
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css" id="theme">
-
-		<!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
-
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
-
-	<body>
-
-		<div class="reveal">
-
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-				<section>
-					<h1>Development Workflow</h1>
-					<p>
-						<small>James Brooking / <a href="http://twitter.com/jambroo">@jambroo</a></small>
-					</p>
-				</section>
-
-				<section>
-					<ul>
-						<li>Previous Working Environments</li>
-						<li>Available Services</li>
-						<li>Current Workflow with Docker</li>
-					</ul>
-				</section>
-
-				<section>
-					<section>
-						<h2>My Past</h2>
-						<p><img src="svn.png" /></p>
-						<p>Server in place.. not used</p>
-					</section>
-				</section>
-
-				<section>
-					<section>
-						<p><img src="ftp-scumbag.jpg" /></p>
-					</section>
-				</section>
-
-				<section>
-					<h2>2012 - Team work using git</h2>
-					<ul>
-						<li>Giant PR</li>
-						<li>Conflict hell</li>
-						<li>Single sysadmin</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>2014 - Denmark</h2>
-					<ul>
-						<li>Agile work environment</li>
-						<li>Worked on small incremental changes</li>
-						<li>Released often to staging server</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2></h2>
-					<ul>
-						<li>All worked off master</li>
-						<li>Vagrant used</li>
-						<li>Jenkins server - post-receive hook</li>
-					</ul>
-				</section>
+<section>
+	<h2></h2>
+	<ul>
+		<li>All worked off master</li>
+		<li>Vagrant used</li>
+		<li>Jenkins server - post-receive hook</li>
+	</ul>
+</section>
 
 
-				<section>
-					<img src="docker.png" />
-				</section>
+<section>
+	<img src="docker.png" />
+</section>
 
-				<section>
-					<h2>Alternatives - Jenkins/Hudson</h2>
-					<ul>
-						<li>Not hosted</li>
-						<li>Powerful</li>
-						<li>Monolithic</li>
-					</ul>
-				</section>
+<section>
+	<h2>Alternatives - Jenkins/Hudson</h2>
+	<ul>
+		<li>Not hosted</li>
+		<li>Powerful</li>
+		<li>Monolithic</li>
+	</ul>
+</section>
 
-				<section>
-					<h2>Alternatives - Codeship</h2>
-					<ul>
-						<li>Does not seem to support Docker out of the box</li>
-					</ul>
-				</section>
+<section>
+	<h2>Alternatives - Codeship</h2>
+	<ul>
+		<li>Does not seem to support Docker out of the box</li>
+	</ul>
+</section>
 
-				<section>
-					<h2>Alternatives - SemaphoreCI</h2>
-					<ul>
-						<li>Free accounts limited to 100 builds per month</li>
-						<li>Docker support in beta</li>
-					</ul>
-				</section>
+<section>
+	<h2>Alternatives - SemaphoreCI</h2>
+	<ul>
+		<li>Free accounts limited to 100 builds per month</li>
+		<li>Docker support in beta</li>
+	</ul>
+</section>
 
-				<section>
-					<h2>Alternatives - Shippable</h2>
-					<ul>
-						<li>Supports encrypted environment variables</li>
-						<li>Docker support only on paid plan?</li>
-						<li>If you do not pay for it says in their docs you have access to docker but not docker commands?</li>
-					</ul>
-				</section>
+<section>
+	<h2>Alternatives - Shippable</h2>
+	<ul>
+		<li>Supports encrypted environment variables</li>
+		<li>Docker support only on paid plan?</li>
+		<li>If you do not pay for it says in their docs you have access to docker but not docker commands?</li>
+	</ul>
+</section>
 
-				<section>
-					<h2>Alternatives - TravisCI</h2>
-					<ul>
-						<li>Support for Docker</li>
-						<li>Costly - $129/month</li>
-					</ul>
-				</section>
+<section>
+	<h2>Alternatives - TravisCI</h2>
+	<ul>
+		<li>Support for Docker</li>
+		<li>Costly - $129/month</li>
+	</ul>
+</section>
 
-				<section>
-					<h2>Alternatives - TeamCity (JetBrains)</h2>
-					<ul>
-						<li>As a plugin you can get support for Docker and Vagrant</li>
-						<li>Not hosted</li>
-					</ul>
-				</section>
+<section>
+	<h2>Alternatives - TeamCity (JetBrains)</h2>
+	<ul>
+		<li>As a plugin you can get support for Docker and Vagrant</li>
+		<li>Not hosted</li>
+	</ul>
+</section>
 
-				<section>
-					<h2>Alternatives - Bamboo (Atlassian)</h2>
-					<ul>
-						<li>Docker support</li>
-						<li>$10/month entry level hosted</li>
-						<li>Has hosted and self-hosted options</li>
-					</ul>
-				</section>
+<section>
+	<h2>Alternatives - Bamboo (Atlassian)</h2>
+	<ul>
+		<li>Docker support</li>
+		<li>$10/month entry level hosted</li>
+		<li>Has hosted and self-hosted options</li>
+	</ul>
+</section>
 
-				<section>
-					<h2>Current Workflow</h2>
-					<p>Work on small task and create PR for other dev</p>
-				</section>
+<section>
+	<h2>Current Workflow</h2>
+	<p>Work on small task and create PR for other dev</p>
+</section>
 
-				<section>
-					<h2>CircleCI - Pros</h2>
-					<ul>
-						<li>Bootstrapped startup price was right</li>
-						<li>Secrets not in code and entered on CircleCI site</li>
-						<li>CircleCI allows you to SSH into the build machine, which is cool</li>
-					</ul>
-				</section>
+<section>
+	<h2>CircleCI - Pros</h2>
+	<ul>
+		<li>Bootstrapped startup price was right</li>
+		<li>Secrets not in code and entered on CircleCI site</li>
+		<li>CircleCI allows you to SSH into the build machine, which is cool</li>
+	</ul>
+</section>
 
-				<section>
-					<h2>CircleCI - Cons</h2>
-					<ul>
-						<li>Free tier has one worker</li>
-						<li>Heavy on the configuraton side, e.g. node_modules</li>
-					</ul>
-				</section>
+<section>
+	<h2>CircleCI - Cons</h2>
+	<ul>
+		<li>Free tier has one worker</li>
+		<li>Heavy on the configuraton side, e.g. node_modules</li>
+	</ul>
+</section>
 
-				<section>
-					<h2>Spawned Environment</h2>
-					<ul>
-						<li>Once per PR if successful spins up complete environment on external server</li>
-						<li>Presents user with URL and SSH details</li>
-						<li>Released to public soon</li>
-					</ul>
-				</section>
+<section>
+	<h2>Spawned Environment</h2>
+	<ul>
+		<li>Once per PR if successful spins up complete environment on external server</li>
+		<li>Presents user with URL and SSH details</li>
+		<li>Released to public soon</li>
+	</ul>
+</section>
 
-				<section>
-					<h2>CircleCI Configuration</h2>
-					<ul>
-						<li>Machine &gt; Services &gt; docker</li>
-						<li>Dependencies - Docker Compose, Docker pulls, Configuration file, Docker save, Docker Compose build, Ran npm install in several folders</li>
-						<li>Dependencies - Ignore cache_directories (node_modules)</li>
-					</ul>
-				</section>
+<section>
+	<h2>CircleCI Configuration</h2>
+	<ul>
+		<li>Machine &gt; Services &gt; docker</li>
+		<li>Dependencies - Docker Compose, Docker pulls, Configuration file, Docker save, Docker Compose build, Ran npm install in several folders</li>
+		<li>Dependencies - Ignore cache_directories (node_modules)</li>
+	</ul>
+</section>
 
-				<section>
-					<h2>CircleCI great once setup</h2>
-				</section>
+<section>
+	<h2>CircleCI great once setup</h2>
+</section>
 
 
-				<section>
-					Questions?
-				</section>
-			</section>
-
-		</div>
-
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
-
-		<script>
-
-			// Full list of configuration options available at:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
-
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
-
-				// Optional reveal.js plugins
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true }
-				]
-			});
-
-		</script>
-
-	</body>
-</html>
+<section>
+	Questions?
+</section>
+</section>
